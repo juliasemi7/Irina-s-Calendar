@@ -110,28 +110,24 @@
             background-color: #FFF9F0;
         }
         
-        /* Первый пакет (январь-февраль) - светло-зеленый */
         .calendar td.package-20day-1 {
             background-color: rgba(144, 238, 144, 0.4);
             font-weight: 600;
             color: #2c3e50;
         }
         
-        /* Второй пакет (февраль-март) - голубой */
         .calendar td.package-20day-2 {
             background-color: rgba(173, 216, 230, 0.5);
             font-weight: 600;
             color: #2c3e50;
         }
         
-        /* Третий пакет (март-апрель) - лавандовый */
         .calendar td.package-20day-3 {
             background-color: rgba(230, 230, 250, 0.7);
             font-weight: 600;
             color: #2c3e50;
         }
         
-        /* Четвертый пакет (апрель-май) - желтый */
         .calendar td.package-20day-4 {
             background-color: rgba(255, 255, 153, 0.7);
             font-weight: 600;
@@ -333,13 +329,13 @@
             "2026-04-13", "2026-04-14", "2026-04-15"
         ];
         
-        // ЧЕТВЕРТЫЙ ПАКЕТ: 16 апреля - 13 мая (желтый)
+        // ЧЕТВЕРТЫЙ ПАКЕТ: 16 апреля - 14 мая (желтый)
         const package20Days4 = [
             "2026-04-16", "2026-04-17",
             "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24",
             "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30",
             "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08",
-            "2026-05-11", "2026-05-12", "2026-05-13"
+            "2026-05-12", "2026-05-13", "2026-05-14"
         ];
         
         // ЗАНЯТИЯ ИРИНЫ - ВТОРНИК И ЧЕТВЕРГ (8 занятий в каждом пакете)
@@ -405,7 +401,7 @@
                 html += `<th${isWeekend ? ' style="color:#e74c3c;"' : ''}>${day}</th>`;
             }
             
-            html += `</tr></thead><tbody>`;
+            html += `<tr></thead><tbody>`;
             
             let dayCounter = 1;
             
@@ -416,7 +412,7 @@
                     if (week === 0 && dayOfWeek < firstDayIndex) {
                         const prevMonthDays = getDaysInMonth(year, month - 1);
                         const prevMonthDay = prevMonthDays - (firstDayIndex - dayOfWeek - 1);
-                        html += `<td class="other-month">${prevMonthDay}<tr>`;
+                        html += `<td class="other-month">${prevMonthDay}</td>`;
                     } else if (dayCounter > daysInMonth) {
                         const nextMonthDay = dayCounter - daysInMonth;
                         html += `<td class="other-month">${nextMonthDay}</td>`;
