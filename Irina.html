@@ -243,14 +243,14 @@
             "2026-04-13","2026-04-14","2026-04-15"
         ];
 
-        // Пакет 4: 16.04 – 06.05 + 26.05 – 01.06 (без 07.05, без 02–04 июня)
+        // Пакет 4: 16.04 – 06.05 + 26.05 – 02.06 (без 07.05, без 03–04 июня)
         const pkg4 = [
             "2026-04-16","2026-04-17",
             "2026-04-20","2026-04-21","2026-04-22","2026-04-23","2026-04-24",
             "2026-04-27","2026-04-28","2026-04-29","2026-04-30",
             "2026-05-04","2026-05-05","2026-05-06",
             "2026-05-26","2026-05-27","2026-05-28","2026-05-29",
-            "2026-06-01"
+            "2026-06-01","2026-06-02"
         ];
 
         // Занятия: 7 мая убрано, 26 и 28 мая — уроки
@@ -276,7 +276,7 @@
             const dim = getDaysInMonth(y,m);
             const off = getFirstDayOfMonth(y,m);
             const total = Math.ceil((off + dim)/7)*7;
-            let html = `<div class="month-container"><div class="month-header">${monthNames[m]} ${y}</div><table class="calendar"><thead></tr>`;
+            let html = `<div class="month-container"><div class="month-header">${monthNames[m]} ${y}</div><table class="calendar"><thead><tr>`;
             for (let wd of dayNames) {
                 const isW = (wd === "Сб" || wd === "Вс");
                 html += `<th${isW ? ' style="color:#e74c3c;"' : ''}>${wd}</th>`;
