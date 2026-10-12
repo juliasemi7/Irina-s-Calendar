@@ -23,6 +23,7 @@
         .pkg-6 { background-color: rgba(216, 191, 216, 0.45); }
         .pkg-7 { background-color: rgba(255, 218, 185, 0.5); }
         .pkg-8 { background-color: rgba(152, 251, 152, 0.45); }
+        .pkg-9 { background-color: rgba(147, 197, 253, 0.45); }
 
         /* Lesson Accent Borders & Glows */
         .lesson-border {
@@ -131,6 +132,14 @@
             "2026-09-21"
         ];
 
+        const pkg9 = [
+            "2026-09-22","2026-09-23","2026-09-24","2026-09-25",
+            "2026-09-28","2026-09-29","2026-09-30","2026-10-01","2026-10-02",
+            "2026-10-05","2026-10-06","2026-10-07","2026-10-08","2026-10-09",
+            "2026-10-12","2026-10-13","2026-10-14","2026-10-15","2026-10-16",
+            "2026-10-19"
+        ];
+
         const lessons = [
             "2026-01-22","2026-01-27","2026-01-29","2026-02-03",
             "2026-02-05","2026-02-10","2026-02-12","2026-02-17",
@@ -148,7 +157,9 @@
             "2026-07-28","2026-07-30","2026-08-04","2026-08-06",
             "2026-08-11","2026-08-13","2026-08-18","2026-08-20",
             "2026-08-25","2026-08-27","2026-09-01","2026-09-03",
-            "2026-09-08","2026-09-10","2026-09-15","2026-09-17"
+            "2026-09-08","2026-09-10","2026-09-15","2026-09-17",
+            "2026-09-22","2026-09-24","2026-09-29","2026-10-01",
+            "2026-10-06","2026-10-08","2026-10-13","2026-10-15"
         ];
 
         function getDaysInMonth(y,m) { return new Date(y, m+1, 0).getDate(); }
@@ -191,6 +202,7 @@
                     const inP6 = isInPackage(pkg6, y, m, day);
                     const inP7 = isInPackage(pkg7, y, m, day);
                     const inP8 = isInPackage(pkg8, y, m, day);
+                    const inP9 = isInPackage(pkg9, y, m, day);
                     const hasLesson = isLesson(y, m, day);
                     const isWeekend = (new Date(y, m, day).getDay() === 0 || new Date(y, m, day).getDay() === 6);
 
@@ -205,6 +217,7 @@
                     else if (inP6) pkgBg = "pkg-6";
                     else if (inP7) pkgBg = "pkg-7";
                     else if (inP8) pkgBg = "pkg-8";
+                    else if (inP9) pkgBg = "pkg-9";
 
                     if (hasLesson) {
                         cls = "lesson-border bg-white text-blue-700 rounded-xl";
