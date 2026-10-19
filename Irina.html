@@ -14,7 +14,6 @@
             min-height: 100vh;
         }
 
-        /* Package Colors (Soft, Modern Pastels) */
         .pkg-1 { background-color: rgba(144, 238, 144, 0.35); }
         .pkg-2 { background-color: rgba(173, 216, 230, 0.4); }
         .pkg-3 { background-color: rgba(230, 230, 250, 0.5); }
@@ -24,8 +23,8 @@
         .pkg-7 { background-color: rgba(255, 218, 185, 0.5); }
         .pkg-8 { background-color: rgba(152, 251, 152, 0.45); }
         .pkg-9 { background-color: rgba(147, 197, 253, 0.45); }
+        .pkg-10 { background-color: rgba(167, 243, 208, 0.5); }
 
-        /* Lesson Accent Borders & Glows */
         .lesson-border {
             box-shadow: inset 0 0 0 2.5px #1d4ed8, 0 4px 12px rgba(29, 78, 216, 0.15);
             font-weight: 800;
@@ -140,6 +139,14 @@
             "2026-10-19"
         ];
 
+        const pkg10 = [
+            "2026-10-20","2026-10-21","2026-10-22","2026-10-23",
+            "2026-10-26","2026-10-27","2026-10-28","2026-10-29","2026-10-30",
+            "2026-11-02","2026-11-03","2026-11-04","2026-11-05","2026-11-06",
+            "2026-11-09","2026-11-10","2026-11-11","2026-11-12","2026-11-13",
+            "2026-11-16"
+        ];
+
         const lessons = [
             "2026-01-22","2026-01-27","2026-01-29","2026-02-03",
             "2026-02-05","2026-02-10","2026-02-12","2026-02-17",
@@ -159,7 +166,10 @@
             "2026-08-25","2026-08-27","2026-09-01","2026-09-03",
             "2026-09-08","2026-09-10","2026-09-15","2026-09-17",
             "2026-09-22","2026-09-24","2026-09-29","2026-10-01",
-            "2026-10-06","2026-10-08","2026-10-13","2026-10-15"
+            "2026-10-06","2026-10-08","2026-10-13","2026-10-15",
+            // пакет 10 (вт + чт)
+            "2026-10-20","2026-10-22","2026-10-27","2026-10-29",
+            "2026-11-03","2026-11-05","2026-11-10","2026-11-12"
         ];
 
         function getDaysInMonth(y,m) { return new Date(y, m+1, 0).getDate(); }
@@ -203,6 +213,7 @@
                     const inP7 = isInPackage(pkg7, y, m, day);
                     const inP8 = isInPackage(pkg8, y, m, day);
                     const inP9 = isInPackage(pkg9, y, m, day);
+                    const inP10 = isInPackage(pkg10, y, m, day);
                     const hasLesson = isLesson(y, m, day);
                     const isWeekend = (new Date(y, m, day).getDay() === 0 || new Date(y, m, day).getDay() === 6);
 
@@ -218,6 +229,7 @@
                     else if (inP7) pkgBg = "pkg-7";
                     else if (inP8) pkgBg = "pkg-8";
                     else if (inP9) pkgBg = "pkg-9";
+                    else if (inP10) pkgBg = "pkg-10";
 
                     if (hasLesson) {
                         cls = "lesson-border bg-white text-blue-700 rounded-xl";
